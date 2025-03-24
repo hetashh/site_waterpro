@@ -9,14 +9,26 @@ const uvId = addCategory('УФ-очистка', 'Системы УФ-дезин�
 const product1Id = addProduct(
     'Система фильтрации воды',
     'Высокопроизводительная система фильтрации воды для всего дома',
-    129900,
-    '/images/filtration-system.jpg',
+    1239900,
+    '/public/test.jpg',
     filtrationId
 );
+
+const product2Id = addProduct(
+    'test',
+    'test',
+    111,
+    '/public/test.jpg',
+    filtrationId
+)
 
 // Добавляем характеристики товара
 addProductSpec(product1Id, 'Производительность', '10 л/мин');
 addProductSpec(product1Id, 'Тип фильтра', 'Обратный осмос');
 addProductSpec(product1Id, 'Срок службы', '5 лет');
+
+addProductSpec(product2Id, 'Производительность', '1l');
+addProductSpec(product2Id, 'Тип фильтра', '1t');
+addProductSpec(product2Id, 'Срок службы', '1y');
 
 console.log('Тестовые данные добавлены!');

@@ -10,7 +10,6 @@
       rel="stylesheet"
     />
     <style>
-      /* Можно добавить дополнительные стили, если потребуется */
     </style>
   </head>
   <body class="font-roboto bg-gray-50 text-gray-900">
@@ -21,7 +20,7 @@
         <nav>
           <ul class="flex space-x-6">
             <li><a href="index.html" class="hover:text-gray-300">Главная</a></li>
-            <li><a href="3.html" class="hover:text-gray-300">Каталог</a></li>
+            <li><a href="Catalog.html" class="hover:text-gray-300">Каталог</a></li>
             <li>
               <a href="index.html#services" class="hover:text-gray-300">Услуги</a>
             </li>
@@ -29,125 +28,39 @@
             <li><a href="index.html#footer" class="hover:text-gray-300">Контакты</a></li>
           </ul>
         </nav>
-        <div class="flex space-x-4">
-          <a href="#" class="text-xl"><i class="fas fa-search"></i></a>
-          <a href="4.html" class="text-xl"><i class="fas fa-shopping-cart"></i></a>
+        <div>
+          <a href="Bin.html" class="relative">
+            <img src="test.jpg" alt="Корзина" class="h-8 w-8">
+            <span id="cartCounter" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+          </a>
         </div>
       </div>
     </header>
 
-    <!-- Корзина -->
     <section class="py-24 bg-white">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold mb-8 text-center">Ваша корзина</h2>
-
+    
         <!-- Список товаров в корзине -->
-        <div class="space-y-8">
-          <!-- Товар 1 -->
-          <div class="flex flex-col md:flex-row items-center bg-gray-100 p-4 rounded-lg">
-            <img
-              src="test.jpg"
-              alt="Система фильтрации воды"
-              class="w-32 h-32 object-cover rounded"
-            />
-            <div class="mt-4 md:mt-0 md:ml-6 flex-1">
-              <h3 class="text-xl font-semibold">Система фильтрации воды</h3>
-              <p class="text-gray-700">
-                Высокопроизводительная система фильтрации воды для всего дома
-              </p>
-              <p class="text-lg font-semibold mt-2">₽129 900</p>
-            </div>
-            <div class="mt-4 md:mt-0 flex flex-col items-center">
-              <input
-                type="number"
-                min="1"
-                value="1"
-                class="w-16 p-2 border border-gray-300 rounded mb-2 text-center"
-              />
-              <button class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700">
-                Удалить
-              </button>
-            </div>
-          </div>
-
-          <!-- Товар 2 -->
-          <div class="flex flex-col md:flex-row items-center bg-gray-100 p-4 rounded-lg">
-            <img
-              src="test.jpg"
-              alt="Смягчитель воды"
-              class="w-32 h-32 object-cover rounded"
-            />
-            <div class="mt-4 md:mt-0 md:ml-6 flex-1">
-              <h3 class="text-xl font-semibold">Смягчитель воды</h3>
-              <p class="text-gray-700">
-                Передовая система смягчения воды для домашнего использования
-              </p>
-              <p class="text-lg font-semibold mt-2">₽89 900</p>
-            </div>
-            <div class="mt-4 md:mt-0 flex flex-col items-center">
-              <input
-                type="number"
-                min="1"
-                value="2"
-                class="w-16 p-2 border border-gray-300 rounded mb-2 text-center"
-              />
-              <button class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700">
-                Удалить
-              </button>
-            </div>
-          </div>
-
-          <!-- Товар 3 -->
-          <div class="flex flex-col md:flex-row items-center bg-gray-100 p-4 rounded-lg">
-            <img
-              src="test.jpg"
-              alt="Система УФ-очистки"
-              class="w-32 h-32 object-cover rounded"
-            />
-            <div class="mt-4 md:mt-0 md:ml-6 flex-1">
-              <h3 class="text-xl font-semibold">Система УФ-очистки</h3>
-              <p class="text-gray-700">
-                УФ-очистка воды для уничтожения бактерий
-              </p>
-              <p class="text-lg font-semibold mt-2">₽59 900</p>
-            </div>
-            <div class="mt-4 md:mt-0 flex flex-col items-center">
-              <input
-                type="number"
-                min="1"
-                value="1"
-                class="w-16 p-2 border border-gray-300 rounded mb-2 text-center"
-              />
-              <button class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700">
-                Удалить
-              </button>
-            </div>
-          </div>
+        <div id="cartItems" class="space-y-8">
+          <!-- Товары будут загружены динамически -->
         </div>
-
+    
         <!-- Итоговая сумма корзины -->
         <div class="mt-12 flex justify-end">
           <div class="w-full max-w-md bg-gray-100 p-6 rounded-lg">
             <h3 class="text-2xl font-semibold mb-4">Итоговая сумма</h3>
-            <div class="flex justify-between mb-2">
-              <span>Система фильтрации воды (1 шт.)</span>
-              <span>₽129 900</span>
-            </div>
-            <div class="flex justify-between mb-2">
-              <span>Смягчитель воды (2 шт.)</span>
-              <span>₽179 800</span>
-            </div>
-            <div class="flex justify-between mb-2">
-              <span>Система УФ-очистки (1 шт.)</span>
-              <span>₽59 900</span>
+            <div id="cartSummary">
+              <!-- Сумма будет рассчитана динамически -->
             </div>
             <hr class="my-4" />
             <div class="flex justify-between text-xl font-bold">
               <span>Общая сумма</span>
-              <span>₽369 600</span>
+              <span id="totalAmount">₽0</span>
             </div>
             <button
               class="mt-6 w-full bg-blue-900 text-white py-3 rounded-lg hover:bg-blue-700"
+              id="checkoutBtn"
             >
               Оформить заказ
             </button>
@@ -202,5 +115,208 @@
         <p>© 2025 WaterPro.</p>
       </div>
     </footer>
+
+    <div id="checkoutModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+      <div class="bg-white p-8 rounded-lg max-w-md w-full mx-4">
+        <h3 class="text-2xl font-bold mb-6">Оформление заказа</h3>
+        
+        <form id="checkoutForm" class="space-y-4">
+          <div>
+            <label class="block text-gray-700 mb-1">ФИО</label>
+            <input type="text" required class="w-full p-2 border border-gray-300 rounded">
+          </div>
+          
+          <div>
+            <label class="block text-gray-700 mb-1">Номер телефона</label>
+            <input type="tel" required class="w-full p-2 border border-gray-300 rounded">
+          </div>
+          
+          <div>
+            <label class="block text-gray-700 mb-1">Email</label>
+            <input type="email" required class="w-full p-2 border border-gray-300 rounded">
+          </div>
+          
+          <div>
+            <label class="block text-gray-700 mb-1">Полный адрес</label>
+            <textarea required class="w-full p-2 border border-gray-300 rounded"></textarea>
+          </div>
+          
+          <div class="flex justify-end space-x-4 pt-4">
+            <button 
+              type="button" 
+              onclick="document.getElementById('checkoutModal').classList.add('hidden')"
+              class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100"
+            >
+              Отмена
+            </button>
+            <button 
+              type="submit" 
+              class="px-4 py-2 bg-blue-900 text-white rounded hover:bg-blue-700"
+            >
+              Подтвердить заказ
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <script>
+      // Загрузка корзины при открытии страницы
+      document.addEventListener('DOMContentLoaded', () => {
+        loadCart();
+        updateCartCounter();
+      });
+    
+      // Функция загрузки корзины
+      function loadCart() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsContainer = document.getElementById('cartItems');
+        const cartSummaryContainer = document.getElementById('cartSummary');
+        
+        cartItemsContainer.innerHTML = '';
+        cartSummaryContainer.innerHTML = '';
+        
+        if (cart.length === 0) {
+          cartItemsContainer.innerHTML = '<p class="text-center text-gray-500">Ваша корзина пуста</p>';
+          document.getElementById('totalAmount').textContent = '₽0';
+          return;
+        }
+        
+        let total = 0;
+        
+        cart.forEach(item => {
+          const itemTotal = item.price * item.quantity;
+          total += itemTotal;
+          
+          // Добавляем товар в список
+          cartItemsContainer.innerHTML += `
+            <div class="flex flex-col md:flex-row items-center bg-gray-100 p-4 rounded-lg" data-id="${item.id}">
+              <img src="${item.image || 'test.jpg'}" alt="${item.name}" class="w-32 h-32 object-cover rounded" />
+              <div class="mt-4 md:mt-0 md:ml-6 flex-1">
+                <h3 class="text-xl font-semibold">${item.name}</h3>
+                <p class="text-lg font-semibold mt-2">₽${item.price.toLocaleString()}</p>
+              </div>
+              <div class="mt-4 md:mt-0 flex flex-col items-center">
+                <input
+                  type="number"
+                  min="1"
+                  value="${item.quantity}"
+                  class="w-16 p-2 border border-gray-300 rounded mb-2 text-center quantity-input"
+                  data-id="${item.id}"
+                />
+                <button class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 remove-btn" data-id="${item.id}">
+                  Удалить
+                </button>
+              </div>
+            </div>
+          `;
+          
+          // Добавляем строку в итоговую сумму
+          cartSummaryContainer.innerHTML += `
+            <div class="flex justify-between mb-2">
+              <span>${item.name} (${item.quantity} шт.)</span>
+              <span>₽${itemTotal.toLocaleString()}</span>
+            </div>
+          `;
+        });
+        
+        // Обновляем общую сумму
+        document.getElementById('totalAmount').textContent = `₽${total.toLocaleString()}`;
+        
+        // Добавляем обработчики событий
+        document.querySelectorAll('.quantity-input').forEach(input => {
+          input.addEventListener('change', (e) => {
+            updateCartItem(e.target.dataset.id, parseInt(e.target.value));
+          });
+        });
+        
+        document.querySelectorAll('.remove-btn').forEach(button => {
+          button.addEventListener('click', (e) => {
+            removeCartItem(e.target.dataset.id);
+          });
+        });
+      }
+    
+      // Функция обновления количества товара
+      function updateCartItem(productId, quantity) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const item = cart.find(item => item.id == productId);
+        
+        if (item) {
+          item.quantity = quantity > 0 ? quantity : 1;
+          localStorage.setItem('cart', JSON.stringify(cart));
+          loadCart();
+          updateCartCounter();
+        }
+      }
+    
+      // Функция удаления товара
+      function removeCartItem(productId) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart = cart.filter(item => item.id != productId);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        loadCart();
+        updateCartCounter();
+      }
+    
+      // Функция обновления счетчика корзины
+      function updateCartCounter() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const counterElement = document.getElementById('cartCounter');
+        if (counterElement) {
+          counterElement.textContent = totalItems;
+          counterElement.style.display = totalItems > 0 ? 'flex' : 'none';
+        }
+      }
+    
+      // Обработчик кнопки оформления заказа
+      document.getElementById('checkoutBtn')?.addEventListener('click', () => {
+        localStorage.removeItem('cart');
+        loadCart();
+        updateCartCounter();
+      });
+
+      // Обработчик кнопки оформления заказа
+  document.getElementById('checkoutBtn')?.addEventListener('click', () => {
+    document.getElementById('checkoutModal').classList.remove('hidden');
+  });
+
+  // Обработка формы заказа
+  document.getElementById('checkoutForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Здесь можно добавить отправку данных на сервер
+    const formData = new FormData(e.target);
+    const orderData = {
+      customer: {
+        name: formData.get('name'),
+        phone: formData.get('phone'),
+        email: formData.get('email'),
+        address: formData.get('address')
+      },
+      items: JSON.parse(localStorage.getItem('cart')) || [],
+      total: calculateTotal()
+    };
+    
+    console.log('Order data:', orderData); // Для тестирования
+    
+    // Очищаем корзину после оформления
+    localStorage.removeItem('cart');
+    loadCart();
+    updateCartCounter();
+    
+    // Показываем сообщение об успехе
+    document.getElementById('checkoutModal').classList.add('hidden');
+  });
+
+  // Функция расчета общей суммы
+  function calculateTotal() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+  }
+    </script>
+
   </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WaterPro - Каталог</title>
@@ -12,9 +12,9 @@
     <style>
     </style>
 
-  </head>
+</head>
 
-  <body class="font-roboto bg-gray-50 text-gray-900">
+<body class="font-roboto bg-gray-50 text-gray-900">
 
     <header class="bg-gray-900 text-white p-4 fixed w-full z-10">
       <div class="container mx-auto flex justify-between items-center">
@@ -31,8 +31,9 @@
           </ul>
         </nav>
         <div>
-          <a href="Bin.html">
+          <a href="Bin.html" class="relative">
             <img src="test.jpg" alt="Корзина" class="h-8 w-8">
+            <span id="cartCounter" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
           </a>
         </div>
       </div>
@@ -46,22 +47,22 @@
         <div class="flex flex-col md:flex-row items-center justify-between">
           <!-- Фильтры -->
           <div class="flex flex-wrap items-center space-x-4 mb-4 md:mb-0">
-            <select class="p-2 border border-gray-300 rounded">
+            <select id="categoryFilter" class="p-2 border border-gray-300 rounded">
               <option value="">Все категории</option>
-              <option value="filtration">Фильтрация воды</option>
-              <option value="softeners">Смягчители воды</option>
-              <option value="uv">УФ-очистка</option>
+              <option value="1">Фильтрация воды</option>
+              <option value="2">Смягчители воды</option>
+              <option value="3">УФ-очистка</option>
             </select>
-            <select class="p-2 border border-gray-300 rounded">
+            <select id="priceFilter" class="p-2 border border-gray-300 rounded">
               <option value="">Все цены</option>
               <option value="0-50000">До 50 000</option>
               <option value="50000-100000">50 000 - 100 000</option>
-              <option value="100000+">Более 100 000</option>
+              <option value="100000-">Более 100 000</option>
             </select>
           </div>
           <!-- Сортировка -->
           <div>
-            <select class="p-2 border border-gray-300 rounded">
+            <select id="sortBy" class="p-2 border border-gray-300 rounded">
               <option value="">Сортировать по</option>
               <option value="price-asc">Цена: по возрастанию</option>
               <option value="price-desc">Цена: по убыванию</option>
@@ -77,55 +78,8 @@
     <section class="py-24 bg-gray-100">
       <div class="container mx-auto">
         <h2 class="text-3xl font-bold mb-8 text-center">Каталог товаров</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          <!-- Пример карточки товара -->
-          <div class="bg-white p-4 rounded-lg shadow">
-            <img src="test.jpg" alt="Система фильтрации воды" class="w-full h-40 object-cover rounded mb-4" />
-            <h3 class="text-xl font-semibold mb-2">Система фильтрации воды</h3>
-            <p class="text-gray-700 mb-2">Высокопроизводительная система для вашего дома</p>
-            <p class="text-lg font-bold mb-4">₽129 900</p>
-            <button class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700">Добавить в корзину</button>
-          </div>
-          <!-- Карточка товара 2 -->
-          <div class="bg-white p-4 rounded-lg shadow">
-            <img src="test.jpg" alt="Смягчитель воды" class="w-full h-40 object-cover rounded mb-4" />
-            <h3 class="text-xl font-semibold mb-2">Смягчитель воды</h3>
-            <p class="text-gray-700 mb-2">Передовая система смягчения воды</p>
-            <p class="text-lg font-bold mb-4">₽89 900</p>
-            <button class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700">Добавить в корзину</button>
-          </div>
-          <!-- Карточка товара 3 -->
-          <div class="bg-white p-4 rounded-lg shadow">
-            <img src="test.jpg" alt="Система УФ-очистки" class="w-full h-40 object-cover rounded mb-4" />
-            <h3 class="text-xl font-semibold mb-2">Система УФ-очистки</h3>
-            <p class="text-gray-700 mb-2">Эффективная УФ-очистка для безопасности</p>
-            <p class="text-lg font-bold mb-4">₽59 900</p>
-            <button class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700">Добавить в корзину</button>
-          </div>
-          <!-- Карточка товара 4 -->
-          <div class="bg-white p-4 rounded-lg shadow">
-            <img src="test.jpg" alt="Фильтр для воды" class="w-full h-40 object-cover rounded mb-4" />
-            <h3 class="text-xl font-semibold mb-2">Фильтр для воды</h3>
-            <p class="text-gray-700 mb-2">Компактный фильтр для офиса и дома</p>
-            <p class="text-lg font-bold mb-4">₽45 900</p>
-            <button class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700">Добавить в корзину</button>
-          </div>
-          <!-- Карточка товара 5 -->
-          <div class="bg-white p-4 rounded-lg shadow">
-            <img src="test.jpg" alt="Очиститель воды" class="w-full h-40 object-cover rounded mb-4" />
-            <h3 class="text-xl font-semibold mb-2">Очиститель воды</h3>
-            <p class="text-gray-700 mb-2">Надёжный очиститель для ежедневного использования</p>
-            <p class="text-lg font-bold mb-4">₽75 900</p>
-            <button class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700">Добавить в корзину</button>
-          </div>
-          <!-- Карточка товара 6 -->
-          <div class="bg-white p-4 rounded-lg shadow">
-            <img src="test.jpg" alt="Комплексное решение" class="w-full h-40 object-cover rounded mb-4" />
-            <h3 class="text-xl font-semibold mb-2">Комплексное решение</h3>
-            <p class="text-gray-700 mb-2">Полный набор оборудования для очистки воды</p>
-            <p class="text-lg font-bold mb-4">₽199 900</p>
-            <button class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700">Добавить в корзину</button>
-          </div>
+        <div id="productsContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <!-- Товары будут загружены сюда динамически -->
         </div>
       </div>
     </section>
@@ -159,5 +113,246 @@
         <p>© 2025 WaterPro.</p>
       </div>
     </footer>
+
+    <script>
+      // Конфигурация
+      const config = {
+        apiUrl: '/api/products',
+        defaultImage: 'images/default-product.jpg'
+      };
+    
+      // Инициализация
+      document.addEventListener('DOMContentLoaded', () => {
+        loadProducts();
+        setupEventListeners();
+        updateCartCounter();
+      });
+    
+      // Загрузка товаров
+      async function loadProducts() {
+        const container = document.getElementById('productsContainer');
+        if (!container) return;
+    
+        showLoadingState(container);
+        
+        try {
+          // Формируем URL с параметрами фильтров
+          const url = buildProductsUrl();
+          const response = await fetch(url);
+          
+          if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.message || 'Ошибка сервера');
+          }
+          
+          const products = await response.json();
+          renderProducts(products, container);
+        } catch (error) {
+          console.error('Ошибка загрузки:', error);
+          showErrorState(container, error);
+        }
+      }
+    
+      // Построение URL с параметрами
+      function buildProductsUrl() {
+        const url = new URL(config.apiUrl, window.location.origin);
+        
+        // Фильтр по категории
+        const categoryFilter = document.getElementById('categoryFilter');
+        if (categoryFilter.value) {
+          url.searchParams.append('category_id', categoryFilter.value);
+        }
+        
+        // Фильтр по цене
+        const priceFilter = document.getElementById('priceFilter');
+        if (priceFilter.value) {
+          url.searchParams.append('price_range', priceFilter.value);
+        }
+        
+        // Сортировка
+        const sortBy = document.getElementById('sortBy');
+        if (sortBy.value) {
+          url.searchParams.append('sort', sortBy.value);
+        }
+        
+        return url.toString();
+      }
+    
+      // Отображение товаров
+      function renderProducts(products, container) {
+        if (!products || products.length === 0) {
+          container.innerHTML = `
+            <div class="col-span-4 text-center py-12">
+              <svg class="w-12 h-12 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <p class="mt-4 text-gray-500">Товары не найдены</p>
+              <button onclick="resetFilters()" class="mt-4 bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-700">
+                Сбросить фильтры
+              </button>
+            </div>
+          `;
+          return;
+        }
+    
+        container.innerHTML = products.map(product => `
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow">
+            <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+              <img src="${product.image_path || config.defaultImage}" 
+                   alt="${product.name}"
+                   class="absolute inset-0 w-full h-full object-cover"
+                   onerror="this.src='${config.defaultImage}'">
+            </div>
+            <h3 class="text-lg font-semibold mb-2">${product.name}</h3>
+            <p class="text-gray-600 text-sm mb-3 line-clamp-2">${product.description || ''}</p>
+            <div class="flex items-center justify-between mt-auto">
+              <span class="text-lg font-bold text-blue-900">${formatPrice(product.price)}</span>
+              <button onclick="addToCart(${product.id})"
+                      class="bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm transition">
+                В корзину
+              </button>
+            </div>
+          </div>
+        `).join('');
+      }
+    
+      // Сброс фильтров
+      function resetFilters() {
+        document.getElementById('categoryFilter').value = '';
+        document.getElementById('priceFilter').value = '';
+        document.getElementById('sortBy').value = '';
+        loadProducts();
+      }
+    
+      // Настройка обработчиков событий
+      function setupEventListeners() {
+        document.getElementById('categoryFilter').addEventListener('change', loadProducts);
+        document.getElementById('priceFilter').addEventListener('change', loadProducts);
+        document.getElementById('sortBy').addEventListener('change', loadProducts);
+      }
+    
+      // Показать состояние загрузки
+      function showLoadingState(container) {
+        container.innerHTML = `
+          <div class="col-span-4 flex flex-col items-center justify-center py-12 space-y-4">
+            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-900"></div>
+            <p class="text-gray-600">Загружаем каталог...</p>
+          </div>
+        `;
+      }
+    
+      // Показать состояние ошибки
+      function showErrorState(container, error) {
+        container.innerHTML = `
+          <div class="col-span-4 text-center py-12">
+            <div class="inline-flex items-center px-4 py-2 bg-red-100 text-red-700 rounded-full">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Произошла ошибка
+            </div>
+            <p class="mt-4 text-gray-600">${error.message || 'Неизвестная ошибка'}</p>
+            <div class="mt-6 space-x-4">
+              <button onclick="loadProducts()" 
+                      class="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-700">
+                Повторить попытку
+              </button>
+              <button onclick="resetFilters()"
+                      class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">
+                Сбросить фильтры
+              </button>
+            </div>
+          </div>
+        `;
+      }
+    
+      // Добавление в корзину
+      async function addToCart(productId) {
+    try {
+        console.log(`Adding product ${productId} to cart`);
+        
+        // 1. Получаем информацию о товаре
+        const productResponse = await fetch(`/api/products/${productId}`);
+        if (!productResponse.ok) {
+            const error = await productResponse.json();
+            throw new Error(error.error || 'Товар не найден');
+        }
+        const product = await productResponse.json();
+        
+        // 2. Добавляем в корзину
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItem = cart.find(item => item.id == productId);
+        
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                image: product.image_path || config.defaultImage,
+                quantity: 1
+            });
+        }
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
+        showNotification(`"${product.name}" добавлен в корзину`);
+        updateCartCounter();
+        
+        console.log('Cart updated:', cart);
+    } catch (error) {
+        console.error('Error adding to cart:', error);
+        showNotification(error.message || 'Ошибка при добавлении в корзину', 'error');
+    }
+}
+    
+      // Вспомогательные функции
+      function formatPrice(price) {
+        return new Intl.NumberFormat('ru-RU', {
+          style: 'currency',
+          currency: 'RUB',
+          minimumFractionDigits: 0
+        }).format(price);
+      }
+    
+      function showNotification(message, type = 'success') {
+        const notification = document.createElement('div');
+        notification.className = `fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg z-50 flex items-center ${
+          type === 'success' ? 'bg-green-500' : 'bg-red-500'
+        } text-white transform transition-all duration-300 translate-y-4 opacity-0`;
+        
+        notification.innerHTML = `
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="${type === 'success' ? 'M5 13l4 4L19 7' : 'M6 18L18 6M6 6l12 12'}"/>
+          </svg>
+          <span>${message}</span>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.classList.remove('translate-y-4', 'opacity-0');
+          notification.classList.add('translate-y-0', 'opacity-100');
+        }, 10);
+        
+        setTimeout(() => {
+          notification.classList.add('translate-y-4', 'opacity-0');
+          setTimeout(() => notification.remove(), 300);
+        }, 3000);
+      }
+    
+      function updateCartCounter() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const counter = document.getElementById('cartCounter');
+        
+        if (counter) {
+          counter.textContent = totalItems;
+          counter.classList.toggle('hidden', totalItems === 0);
+        }
+      }
+    </script>
+    
   </body>
 </html>
